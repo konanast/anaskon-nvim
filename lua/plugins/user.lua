@@ -52,7 +52,6 @@ return {
       -- add more custom luasnip configuration such as filetype extend or custom snippets
       local luasnip = require "luasnip"
       luasnip.filetype_extend("javascript", { "javascriptreact" })
-      require("luasnip.loaders.from_vscode").lazy_load()
     end,
   },
 
@@ -83,67 +82,6 @@ return {
         -- disable for .vim files, but it work for another filetypes
         Rule("a", "a", "-vim")
       )
-    end,
-  },
-
-  -- === Custom Plugins for Python/Django ===
-
-  -- Python test runner integration
-  { "vim-test/vim-test" },
-
-  -- Modern Neotest framework (optionally enhanced test UI)
-  {
-    "nvim-neotest/neotest",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "antoinemadec/FixCursorHold.nvim",
-      "nvim-neotest/neotest-python",
-    },
-    config = function()
-      require("neotest").setup({
-        adapters = {
-          require("neotest-python")({
-            -- dap = { justMyCode = false },
-            runner = "pytest", -- or "unittest"
-          }),
-        },
-      })
-    end,
-  },
-
-  -- Optional: Fancy input UI (used by some tools)
-  { "stevearc/dressing.nvim",
-  event = "VeryLazy", -- only loads when needed
-  },
-
-  -- === Python Debugging Support ===
-  {
-    "mfussenegger/nvim-dap",
-    dependencies = {
-      "rcarriga/nvim-dap-ui",           -- Fancy debug interface
-      "jay-babu/mason-nvim-dap.nvim",   -- Auto-installs DAP backends (like debugpy)
-    },
-    config = function()
-      local dap = require("dap")
-      local dapui = require("dapui")
-
-      require("mason-nvim-dap").setup({
-        ensure_installed = { "python" },
-        automatic_setup = true,
-      })
-
-      dapui.setup()
-
-      -- Auto open/close DAP UI when debugging starts or ends
-      dap.listeners.after.event_initialized["dapui_config"] = function()
-        dapui.open()
-      end
-      dap.listeners.before.event_terminated["dapui_config"] = function()
-        dapui.close()
-      end
-      dap.listeners.before.event_exited["dapui_config"] = function()
-        dapui.close()
-      end
     end,
   },
 }

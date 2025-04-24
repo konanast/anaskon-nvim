@@ -1,33 +1,24 @@
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
+-- Customize None-ls sources
+
 ---@type LazySpec
 return {
   "nvimtools/none-ls.nvim",
   opts = function(_, opts)
-    local nls = require("null-ls")
+    -- opts variable is the default configuration table for the setup function call
+    -- local null_ls = require "null-ls"
 
+    -- Check supported formatters and linters
+    -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/formatting
+    -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
+
+    -- Only insert new sources, do not replace the existing ones
+    -- (If you wish to replace, use `opts.sources = {}` instead of the `list_insert_unique` function)
     opts.sources = require("astrocore").list_insert_unique(opts.sources, {
-      -- === Lua ===
-      nls.builtins.formatting.stylua,
-
-      -- === Python: Formatting ===
-      nls.builtins.formatting.black,
-      nls.builtins.formatting.isort,
-
-      -- === Python: Linting / Diagnostics ===
-      nls.builtins.diagnostics.ruff.with({
-        extra_args = { "--line-length=88" }, -- optional
-      }),
-      nls.builtins.diagnostics.bandit,
-      nls.builtins.diagnostics.mypy,
-
-      -- Optional: keep if you want classic linting too
-      -- nls.builtins.diagnostics.flake8.with({
-      --   extra_args = { "--max-line-length=88" },
-      -- }),
-
-      -- === Markdown / Web (optional) ===
-      -- nls.builtins.formatting.prettier.with({
-      --   filetypes = { "html", "json", "yaml", "markdown" },
-      -- }),
+      -- Set a formatter
+      -- null_ls.builtins.formatting.stylua,
+      -- null_ls.builtins.formatting.prettier,
     })
   end,
 }

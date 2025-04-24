@@ -3,43 +3,28 @@ return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
     ensure_installed = {
-      -- === Python & related ===
+      -- === Python + Infra ===
       "python",
       "json",
       "yaml",
       "toml",
-      "requirements", -- optional; may not be an actual parser
+      "dockerfile",
+      "bash",
+      "requirements",
 
-      -- === Web (Django templates, APIs) ===
-      "html",
-      "css",
-      "javascript",
-      "typescript",
-      "tsx",          -- if working with React
+      -- === Web / Docs ===
       "xml",
       "markdown",
       "markdown_inline",
 
-      -- === Docker / Infrastructure ===
-      "dockerfile",
-      "bash",
-
-      -- === AstroNvim / Lua ===
+      -- === AstroNvim Core ===
       "lua",
       "vim",
       "query",
 
-      -- === Files and data ===
+      -- === Data ===
       "csv",
-
-      -- add any others you work with
     },
-    highlight = {
-      enable = true,
-      additional_vim_regex_highlighting = false,
-    },
-    indent = {
-      enable = true,
-    },
+    auto_install = true,
   },
 }

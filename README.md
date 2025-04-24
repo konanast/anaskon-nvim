@@ -1,4 +1,5 @@
-# Anaskon NVIM an AstroNvim Template for Python
+# AstroNvim Template
+
 **NOTE:** This is for AstroNvim v5+
 
 A template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim)
@@ -22,10 +23,8 @@ You can also just clone this repository directly if you do not want to track you
 
 #### Clone the repository
 
-Clone this repo to `~/.config/nvim`:
-
 ```shell
-git clone https://github.com/konanast/anaskon-nvim ~/.config/nvim
+git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim
 ```
 
 #### Start Neovim

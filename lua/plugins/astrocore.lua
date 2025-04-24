@@ -1,3 +1,5 @@
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -37,21 +39,14 @@ return {
     },
     -- vim options can be configured here
     options = {
-      opt = {
-        relativenumber = true,
-        number = true,
-        spell = false,
-        signcolumn = "yes",
-        wrap = false,
-        shiftwidth = 4,
-        tabstop = 4,
-        expandtab = true,
-        clipboard = "unnamedplus",
-        timeoutlen = 300,
-        formatoptions = "jcroqlnt",
+      opt = { -- vim.opt.<key>
+        relativenumber = true, -- sets vim.opt.relativenumber
+        number = true, -- sets vim.opt.number
+        spell = false, -- sets vim.opt.spell
+        signcolumn = "yes", -- sets vim.opt.signcolumn to yes
+        wrap = false, -- sets vim.opt.wrap
       },
       g = { -- vim.g.<key>
-        python_recommended_style = 0, -- disables default 2-space Python indent
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
@@ -84,16 +79,18 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
-        ["<Leader>tn"] = { ":TestNearest<CR>", desc = "Run nearest test" },
-        ["<Leader>tf"] = { ":TestFile<CR>", desc = "Run tests in file" },
-        ["<Leader>ts"] = { ":TestSuite<CR>", desc = "Run full test suite" },
-        ["<Leader>tl"] = { ":TestLast<CR>", desc = "Rerun last test" },
-        ["<F5>"] = { function() require("dap").continue() end, desc = "DAP Continue" },
-        ["<F10>"] = { function() require("dap").step_over() end, desc = "DAP Step Over" },
-        ["<F11>"] = { function() require("dap").step_into() end, desc = "DAP Step Into" },
-        ["<F12>"] = { function() require("dap").step_out() end, desc = "DAP Step Out" },
-        ["<Leader>b"] = { function() require("dap").toggle_breakpoint() end, desc = "DAP Toggle Breakpoint" },
-        ["<Leader>du"] = { function() require("dapui").toggle() end, desc = "Toggle DAP UI" },
+
+
+--         ["<Leader>tn"] = { ":TestNearest<CR>", desc = "Run nearest test" },
+--         ["<Leader>tf"] = { ":TestFile<CR>", desc = "Run tests in file" },
+--         ["<Leader>ts"] = { ":TestSuite<CR>", desc = "Run full test suite" },
+--         ["<Leader>tl"] = { ":TestLast<CR>", desc = "Rerun last test" },
+--         ["<F5>"] = { function() require("dap").continue() end, desc = "DAP Continue" },
+--         ["<F10>"] = { function() require("dap").step_over() end, desc = "DAP Step Over" },
+--         ["<F11>"] = { function() require("dap").step_into() end, desc = "DAP Step Into" },
+--         ["<F12>"] = { function() require("dap").step_out() end, desc = "DAP Step Out" },
+--         ["<Leader>b"] = { function() require("dap").toggle_breakpoint() end, desc = "DAP Toggle Breakpoint" },
+--         ["<Leader>du"] = { function() require("dapui").toggle() end, desc = "Toggle DAP UI" },
       },
     },
   },
