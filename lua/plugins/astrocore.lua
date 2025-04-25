@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -79,18 +77,6 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
-
-
---         ["<Leader>tn"] = { ":TestNearest<CR>", desc = "Run nearest test" },
---         ["<Leader>tf"] = { ":TestFile<CR>", desc = "Run tests in file" },
---         ["<Leader>ts"] = { ":TestSuite<CR>", desc = "Run full test suite" },
---         ["<Leader>tl"] = { ":TestLast<CR>", desc = "Rerun last test" },
---         ["<F5>"] = { function() require("dap").continue() end, desc = "DAP Continue" },
---         ["<F10>"] = { function() require("dap").step_over() end, desc = "DAP Step Over" },
---         ["<F11>"] = { function() require("dap").step_into() end, desc = "DAP Step Into" },
---         ["<F12>"] = { function() require("dap").step_out() end, desc = "DAP Step Out" },
---         ["<Leader>b"] = { function() require("dap").toggle_breakpoint() end, desc = "DAP Toggle Breakpoint" },
---         ["<Leader>du"] = { function() require("dapui").toggle() end, desc = "Toggle DAP UI" },
       },
     },
   },

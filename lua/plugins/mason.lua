@@ -13,8 +13,6 @@ return {
 
         -- === Formatters ===
         "stylua",              -- Lua formatter
-        "black",               -- Python formatter
-        "isort",               -- Python import sorter
 
         -- === Linters ===
         "ruff",                -- Fast Python linter
